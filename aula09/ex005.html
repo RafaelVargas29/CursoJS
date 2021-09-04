@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background: rgba(27, 74, 161, 0.781) ;
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <section id="msg">Clique em mim</section><br>
+    <section name="tst"> Teste</section><br>
+    <section class="stst">Segundo teste</section><br>
+
+    <script>
+        var corpo = window.document.body //pegando o elemento por tag
+        var p1 = window.document.getElementsByTagName('p')[1]//pegando o elemento por tag
+        var men = window.document.getElementById('msg')//pegando o elemento por id
+        var tes = window.document.querySelector('section.stst')// Pegando elemento por tag + classe
+
+        window.document.write(p1.innerText +'<br>') //Replicando o texto da variável p1 SEM formatação HTML
+        window.document.write(p1.innerHTML) //Replicando o texto da variável p1 COM formatação HTML
+        
+        p1.style.color = 'blue' //Mudando p1 de cor
+        corpo.style.background = 'black' //manipulando a cor do body por DOM
+        men.style.background = 'red'
+        //men.innerText = 'Estou aguardando ...' //modficando texto da variável men SEM formatação HTML
+        tes.style.color = 'red'
+        
+        window.document.getElementById('msg').innerText = 'Estou aguardando ...' //Modificando texto sem usar variável
+        document.getElementsByName('tst')[0].innerText = 'Apenas fazendo um teste!'
+        document.getElementsByName('tst')[0].style.background = 'red' //Selencianando elemento por name sem variável
+    </script>
+</body>
+</html>
